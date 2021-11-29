@@ -8,7 +8,7 @@ services:
     env_file:
       - .env
     volumes:
-      - ${LOGS_PATH}:/logs:ro
+      - ./logs:/logs:ro
   logger:
     build: ./logger
     container_name: orl-logger
@@ -17,30 +17,14 @@ services:
     env_file:
       - .env
     volumes:
-      - ${VAR_ORL}:/logger
-      - ${LOGS_PATH}:/logs
+      - ./package/var/overrustlelogs:/logger:ro
+      - ./logs:/logs
   frontend:
     image: nginx:latest
-    container_name: orl-web-static
-    restart: unless-stopped
-    volumes:
-      - ./package/etc/nginx/sites-enabled/overrustlelogs.net.conf:/etc/nginx/conf.d/nginx.conf:ro
-      - ./server/assets:/var/overrustlelogs/public/assets/:ro
-  cache:
-    image: varnish:latest
-    container_name: orl-web-cache
+    container_name: orl-web
     restart: unless-stopped
     ports:
-      - "${PORT}:80"
+      - "9999:9999"
     volumes:
-      - ./package/etc/varnish/default.vcl:/etc/varnish/default.vcl:ro
-  bot:
-    build: ./bot
-    container_name: orl-bot
-    user: "${USER_UID}"
-    restart: unless-stopped
-    env_file:
-      - .env
-    volumes:
-      - ${VAR_ORL}:/bot
-      - ${LOGS_PATH}:/logs:ro
+      - ./package/overrustlelogs.net.conf:/etc/nginx/conf.d/nginx.conf:ro
+      - ./server/assets:/var/overrustlelogs/public/assets/:ro

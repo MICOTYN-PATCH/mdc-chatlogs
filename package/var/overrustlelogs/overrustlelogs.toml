@@ -2,9 +2,9 @@ logHost = "http://overrustlelogs.net"
 maxOpenLogs = 1000
 
 [destinygg]
-logHost = "https://dgg.overrustlelogs.net"
-socketURL = "wss://destiny.gg:9998/ws"
-originURL = "http://destiny.gg"
+logHost = "https://logs.destiny.gg"
+socketURL = "wss://chat.destiny.gg/ws"
+originURL = "https://www.destiny.gg"
 cookie = ""
 
 [twitch]
@@ -16,10 +16,3 @@ nick = ""
 oauth = ""
 admins = ["dbc__", "tensei_c"]
 commandChannel = "overrustlelogs"
-
-[bot]
-admins = [
-  "Destiny",
-  "RightToBearArmsLOL",
-  "dbc"
-]

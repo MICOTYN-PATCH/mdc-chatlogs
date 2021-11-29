@@ -4,6 +4,6 @@
   <div class="alert alert-danger" role="alert">
     {{.}}
   </div>
-  <img src="/assets/rustle.png" class="img-fluid rounded align-middle my-2" alt="Responsive image">
+  <img src="/assets/dgg.png" class="img-fluid rounded align-middle my-2" alt="Responsive image">
 </div>
 {{end}}
