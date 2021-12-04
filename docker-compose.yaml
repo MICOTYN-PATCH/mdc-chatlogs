@@ -24,7 +24,7 @@ services:
     container_name: orl-web
     restart: unless-stopped
     ports:
-      - "9999:9999"
+      - "127.0.0.1:9999:9999"
     volumes:
       - ./package/overrustlelogs.net.conf:/etc/nginx/conf.d/nginx.conf:ro
       - ./server/assets:/var/overrustlelogs/public/assets/:ro
