@@ -1,8 +1,5 @@
-# OverRustle Logs
+# www.micotyn.com chatlogs
 
-A chat log suite for [Destiny.gg](https://www.destiny.gg/bigscreen) and [Twitch.tv](http://twitch.tv).
-
-## Setting Up OverRustle Logs
 
 These instructions assume you are installing on Ubuntu 14.04 or higher.
 
